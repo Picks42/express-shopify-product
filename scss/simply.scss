@@ -1,0 +1,29 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 8 Mar, 2018, 11:03:08 PM
+    Author     : Picks
+*/
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms; 
+	transform: $transforms;
+}
+@mixin transition($transitions) {
+	-moz-transition: $transitions;
+	-o-transition: $transitions;
+	-ms-transition: $transitions;
+	-webkit-transition: $transitions;
+	transition: $transitions;
+}
+@import '_polaris.scss';
+@import '_grid.scss';
+@import '_sweetAlert.scss';
+@import '_toastr.scss'; 
+@import '_custom.scss'; 
+ 

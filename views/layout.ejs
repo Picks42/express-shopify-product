@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/theme.css">
+    <script>
+        window.simply = window.simply || {};
+        window.cn = function (o) {
+            return "undefined" == typeof o || null == o || "" == o.toString().trim()
+        };
+        window.cb = function (o) {
+            if (o == 'true') {
+                return true
+            } else {
+                return false
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <%- include ../includes/header.ejs -%>
+    <div class='body_wrapper'>
+        <%- body -%>
+    </div>
+    <script src="/public/theme.js"></script>
+    <script src="/public/toastr.js"></script>
+    <%- include ../includes/msgs.ejs -%>
+</body>
+
+</html>

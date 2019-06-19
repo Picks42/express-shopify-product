@@ -1,0 +1,28 @@
+<script>
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-bottom-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+    <% if(success_msg != ''){ %>
+    toastr["success"]("<%= success_msg %>");
+    <% } %>
+    <% if(warning_msg != ''){ %>
+    toastr["warning"]("<%= warning_msg %>");
+    <% } %>
+    <% if(error_msg != ''){ %>
+    toastr["error"]("<%= error_msg %>");
+    <% } %>
+</script>

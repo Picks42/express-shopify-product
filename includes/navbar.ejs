@@ -1,0 +1,48 @@
+<%
+var links = [
+{
+    "url":"/timesheet",
+    "title":"Timesheet"
+},
+{
+    "url":"/users",
+    "title":"Users"
+},
+{
+    "url":"/register",
+    "title":"Register"
+}
+];
+%>
+<div class="Polaris-PositionedOverlay main_settings_dropdown">
+    <div class="Polaris-Popover" data-polaris-overlay="true">
+        <div class="Polaris-Popover__Tip"></div>
+        <div class="Polaris-Popover__FocusTracker" tabindex="0"></div>
+        <div class="Polaris-Popover__Wrapper">
+            <div id="Popover6" tabindex="-1" class="Polaris-Popover__Content">
+                <div class="Polaris-Popover__Pane Polaris-Popover__Pane--fixed">
+                    <div class="Polaris-Popover__Section text-left">
+                        <a class="Polaris-ActionList__Item" href='/'>Home</a>
+                    </div>
+                </div>
+                <div class="Polaris-Popover__Pane Polaris-Scrollable Polaris-Scrollable--vertical"
+                    data-polaris-scrollable="true">
+                    <div class="Polaris-ActionList">
+                        <div class="Polaris-ActionList__Section--withoutTitle">
+                            <ul class="Polaris-ActionList__Actions">
+                                
+                                    <% for(var i=0; i < links.length; i++) { %>
+                                        <li>
+                                    <a href='<%= links[i].url %>' class='Polaris-ActionList__Item'><%= links[i].title %>  </a>
+                                </li>     
+                                     <% } %>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Polaris-Popover__FocusTracker" tabindex="0"></div>
+    </div>
+</div>
