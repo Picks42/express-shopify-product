@@ -1,0 +1,38 @@
+<div class="Polaris-Page">
+    <h1 class="Polaris-Page__Header Polaris-DisplayText--sizeLarge text-center">
+        Dashboard
+    </h1>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="Polaris-Card">
+                <div class="Polaris-Card__Header">
+                    <h2 class="Polaris-Heading">Welcome <%= shopname %></h2>
+                </div>
+                <div class="Polaris-Card__Section">
+                    <span class='error'>
+                        <c:out value="${message}" /></span>
+                    <form class="form-horizontal" method="post" action="/">
+                        <div class="Polaris-Label">
+                            <label class="Polaris-Label__Text">
+                                Shop URL
+                            </label>
+                        </div>
+                        <div class="Polaris-TextField">
+                            <input class="Polaris-TextField__Input" type="text" name="shop" required=""
+                                placeholder="shopname.myshopify.com">
+                            <div class="Polaris-TextField__Backdrop">
+                            </div>
+                        </div>
+                        <div class="text-left margin_bottom">
+                            <button type="submit" class="Polaris-Button Polaris-Button--primary">
+                                <span class="Polaris-Button__Content">
+                                    <span>Login</span>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,24 +9,24 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       shop: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       token: {
         type: Sequelize.STRING
       },
-      guid: {
-        type: Sequelize.STRING
-      },
       plan: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue:"none"
       },
       status: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue:"active"
       },
       email: {
         type: Sequelize.STRING
       },
-      owner: {
+      shop_owner: {
         type: Sequelize.STRING
       },
       phone: {

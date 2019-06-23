@@ -1,23 +1,36 @@
-const dotenv = require("dotenv").config();
 const express = require("express");
 const expressLayout = require("express-ejs-layouts");
 const app = express();
 const Sequelize = require("sequelize");
+const passport = require('passport');
 var flash = require("connect-flash-plus");
-var session = require("express-session");
+var session = require("cookie-session");
 const keys = require("./config/keys");
+
 global.cn = function(o) {
   return "undefined" == typeof o || null == o || "" == o.toString().trim();
 };
 
-// Connect flash
+
+
+// Passport Config
+
+
+// Express session
 app.use(
   session({
     secret: "secret",
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    maxAge: 1 * 60 * 60 * 1000
   })
 );
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Connect flash
 app.use(flash());
 
 // Global variables
@@ -25,6 +38,7 @@ app.use(function(req, res, next) {
   res.locals.success_msg = req.flash("success_msg");
   res.locals.error_msg = req.flash("error_msg");
   res.locals.warning_msg = req.flash("warning_msg");
+  res.locals.shopname = req.session.shop;
   next();
 });
 

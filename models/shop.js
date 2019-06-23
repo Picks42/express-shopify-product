@@ -1,9 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Shop =  ('Shop', {
+  var Shop =  sequelize.define('Shop', {
     shop: DataTypes.STRING,
     token: DataTypes.STRING,
-    guid: DataTypes.STRING,
     plan: DataTypes.STRING,
     status: DataTypes.STRING,
     email: DataTypes.STRING,
